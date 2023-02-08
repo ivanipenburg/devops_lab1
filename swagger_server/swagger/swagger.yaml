@@ -59,6 +59,12 @@ paths:
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                format: integer`
+                x-content-type: application/json
         "400":
           description: invalid ID
         "404":
