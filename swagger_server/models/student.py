@@ -1,13 +1,13 @@
 # coding: utf-8
 
 from __future__ import absolute_import
+
 from datetime import date, datetime  # noqa: F401
+from typing import Dict, List  # noqa: F401
 
-from typing import List, Dict  # noqa: F401
-
+from swagger_server import util
 from swagger_server.models.base_model_ import Model
 from swagger_server.models.grade_record import GradeRecord  # noqa: F401,E501
-from swagger_server import util
 
 
 class Student(Model):
@@ -15,7 +15,7 @@ class Student(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, student_id: int=None, first_name: str=None, last_name: str=None, grade_records: List[GradeRecord]=None):  # noqa: E501
+    def __init__(self, student_id: str=None, first_name: str=None, last_name: str=None, grade_records: List[GradeRecord]=None):  # noqa: E501
         """Student - a model defined in Swagger
 
         :param student_id: The student_id of this Student.  # noqa: E501
@@ -28,7 +28,7 @@ class Student(Model):
         :type grade_records: List[GradeRecord]
         """
         self.swagger_types = {
-            'student_id': int,
+            'student_id': str,
             'first_name': str,
             'last_name': str,
             'grade_records': List[GradeRecord]
@@ -57,7 +57,7 @@ class Student(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def student_id(self) -> int:
+    def student_id(self) -> str:
         """Gets the student_id of this Student.
 
         Student ID  # noqa: E501
@@ -68,7 +68,7 @@ class Student(Model):
         return self._student_id
 
     @student_id.setter
-    def student_id(self, student_id: int):
+    def student_id(self, student_id: str):
         """Sets the student_id of this Student.
 
         Student ID  # noqa: E501
