@@ -43,7 +43,7 @@ def add(student=None):
 
     mydict = student.to_dict()
     x = mycol.insert_one(mydict)
-    return x.inserted_id
+    return student.student_id
 
 
 # def get_by_id(student_id=None, subject=None):
