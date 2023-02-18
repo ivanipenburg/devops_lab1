@@ -16,7 +16,7 @@ jobs:
     - name: run docker
       uses: isbang/compose-action@v1.4.1
       with:
-        compose-file: docker-compose.yml
+        compose-file: docker-compose.yaml
     - name: Run API Tests
       id: run-newman
       uses: anthonyvscode/newman-action@v1
