@@ -111,11 +111,9 @@ components:
         first_name:
           type: string
           description: Student First Name
-          example: Jan
         last_name:
           type: string
           description: Student Last Name
-          example: Smit
         gradeRecords:
           type: array
           description: Grade Records
@@ -125,11 +123,6 @@ components:
         student_id: 123
         last_name: Smit
         first_name: Jan
-        gradeRecords:
-        - grade: 5.5
-          subject_name: Jan Smit
-        - grade: 5.5
-          subject_name: Jan Smit
     GradeRecord:
       required:
       - grade
@@ -145,8 +138,7 @@ components:
           minimum: 0
           type: number
           format: float
-          example: 5.5
       example:
         grade: 5.5
-        subject_name: Jan Smit
+        subject_name: Mathematics
 
