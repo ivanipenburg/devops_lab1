@@ -47,7 +47,7 @@ def add(student=None):
 
 
 def get_by_id(student_id=None, subject=None):
-    student = student_db.get(doc_id=str(student_id))
+    student = student_db.get(doc_id=student_id)
     if not student:
         return 'not found', 404
     student['student_id'] = student_id
@@ -69,10 +69,10 @@ def get_by_id(student_id=None, subject=None):
 
 
 def delete(student_id=None):
-    student = student_db.get(doc_id=str(student_id))
+    student = student_db.get(doc_id=student_id)
     if not student:
         return 'not found', 404
-    student_db.remove(doc_ids=[str(student_id)])
+    student_db.remove(doc_ids=[student_id])
     return str(student_id)
 
 # def delete(student_id=None):
