@@ -14,12 +14,12 @@ jobs:
       run: |
         docker build . -t $REPO_NAME/$IMAGE_NAME
     - name: run docker
-      uses: isbang/compose-action@v1
+      uses: isbang/compose-action@v1.4.1
       with:
         compose_file: docker-compose.yml
     - name: Run API Tests
       id: run-newman
-      uses: anthonyvscode/newman-action@v1.4.1
+      uses: anthonyvscode/newman-action@v1
       with:
         collection: postman/collection.json
         environment: postman/environment.json
