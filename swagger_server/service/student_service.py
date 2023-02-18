@@ -28,8 +28,8 @@ def add(student=None):
     if res:
         return 'already exists', 409
 
-    doc_id = student_db.insert(student.to_dict())
-    student.student_id = str(doc_id)
+    student_db.insert(student.to_dict())
+    
     return student.student_id
 
 
