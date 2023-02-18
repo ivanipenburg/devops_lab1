@@ -85,4 +85,4 @@ def delete(student_id=None):
         return 'not found', 404
     
     mycol.delete_one(myquery)
-    return student_id
+    return str(student_id)
