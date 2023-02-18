@@ -14,13 +14,9 @@ jobs:
       run: |
         docker build . -t $REPO_NAME/$IMAGE_NAME
     - name: run docker
-      run: |
-        docker compose pull && docker compose up -d
-      # run: |
-      #   docker run -d -p 27017:27017 -host=172.17.0.3 mongo:4 && \
-      #   sleep 5 && \
-      #   docker run -d -p 8000:8000 -e MONGO_URI=mongodb://172.17.0.3:27017 -host=172.17.0.2 $REPO_NAME/$IMAGE_NAME:latest && \
-      #     docker ps && sleep 5
+      uses: isbang/compose-action@v1
+      with:
+        compose_file: docker-compose.yml
     - name: Run API Tests
       id: run-newman
       uses: anthonyvscode/newman-action@v1
