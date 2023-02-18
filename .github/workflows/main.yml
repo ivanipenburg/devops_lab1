@@ -19,7 +19,7 @@ jobs:
         compose_file: docker-compose.yml
     - name: Run API Tests
       id: run-newman
-      uses: anthonyvscode/newman-action@v1
+      uses: anthonyvscode/newman-action@v1.4.1
       with:
         collection: postman/collection.json
         environment: postman/environment.json
